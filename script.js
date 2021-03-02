@@ -91,7 +91,7 @@ function initialize(){
 	document.getElementById("DataBusInput").addEventListener("keydown",DataBusInputKeydown);
 	document.getElementById("RamInput").addEventListener("keydown",RamInputKeydown);
 	document.addEventListener("keydown",keyDownHandler); //nur zum überspringen des ladebildschirms (wird nach dem Laden wieder entfernt)
-	document.addEventListener("mousedown",mouseDownHandler); //nur zum überspringen des ladebildschirms (wird nach dem Laden wieder entfernt)
+	document.addEventListener("mousedown",fistKeyDownHandler); //nur zum überspringen des ladebildschirms (wird nach dem Laden wieder entfernt)
 	window.addEventListener('resize', resize);
 
 	document.getElementById(0).style.background = "#00F45D";
@@ -122,7 +122,9 @@ function fadeOutStartScreen(){//für verzögertes ausblenden des Startblidschirm
 	document.getElementById("startscreen").style.display = "none";
 	document.getElementById("programm").style.display = "inline";
 	document.getElementsByTagName("body")[0].style.backgroundImage = "url(Hintergrund.png)"
-	document.removeEventListener("keydown", keyDownHandler);	//wird für sonst nichts genutzt
+	document.removeEventListener("keydown", fistKeyDownHandler);	//wird für sonst nichts genutzt
+	document.addEventListener("keydown", keyDownHandler);
+	document.addEventListener("keyup",keyUpHandler);
 	document.removeEventListener("mousedown",mouseDownHandler);	//wird für sonst nichts genutzt
 
 
@@ -132,9 +134,64 @@ function fadeOutStartScreen(){//für verzögertes ausblenden des Startblidschirm
 	resetComputer()
 }
 
-function keyDownHandler(){
+function fistKeyDownHandler(){
 	if(loaded){
 		fadeOutStartScreen();
+	}
+
+}
+
+function keyDownHandler(e){
+	console.log(e.key);
+	switch (e.key) {
+		case "ArrowLeft":
+
+			writeToRam(1,ramSize - resolution*resolution - 1)
+		break;
+		case "ArrowUp":
+
+			writeToRam(1,ramSize - resolution*resolution - 2)
+		break;
+		case "ArrowRight":
+
+			writeToRam(1,ramSize - resolution*resolution - 3)
+		break;
+		case "ArrowDown":
+
+			writeToRam(1,ramSize - resolution*resolution - 4)
+		break;
+		case " ":
+		console.log("dfklhgjkdfg");
+			writeToRam(1,ramSize - resolution*resolution - 5)
+		break;
+		default:
+
+	}
+}
+
+function keyUpHandler(e){
+	switch (e.key) {
+		case "ArrowLeft":
+
+			writeToRam(0,ramSize - resolution*resolution - 1)
+		break;
+		case "ArrowUp":
+
+			writeToRam(0,ramSize - resolution*resolution - 2)
+		break;
+		case "ArrowRight":
+
+			writeToRam(0,ramSize - resolution*resolution - 3)
+		break;
+		case "ArrowDown":
+
+			writeToRam(0,ramSize - resolution*resolution - 4)
+		break;
+		case " ":
+			writeToRam(0,ramSize - resolution*resolution - 5)
+		break;
+		default:
+
 	}
 
 }
