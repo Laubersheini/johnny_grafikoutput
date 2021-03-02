@@ -454,7 +454,7 @@ document.getElementById(SelectetRamModule).style.background = "yellow";
 }
 
 function EditRam(CellNumber){
-
+if(!turboMode){
 //entfärben des alten Moduls
 	if(dataHighlightedRamModule != SelectetRamModule){
 		document.getElementById(SelectetRamModule).style.background = "";
@@ -483,7 +483,7 @@ document.getElementById(SelectetRamModule).style.background = "yellow";
 	document.getElementById("RamEingabe").style.top = (document.getElementById(SelectetRamModule).getBoundingClientRect().top - RamEingabeHeight/2 + tabelHeight/2)+"px"; //neupositionierung des Peiles für die Rameingabe
 	}
 	}
-
+}
 
 
 
@@ -492,10 +492,11 @@ document.getElementById(SelectetRamModule).style.background = "yellow";
 function highlightMc(collum){	//übernimmt auch springen
 //springen im Mc
 	//document.getElementsByClassName("MicroCodeTable")[MicroCodeCounter].style.background = "" //muss vor ändern des Mc counters ausgeführt werden
-
+if(!turboMode){ //in turbo mode this should not be done as this forces the browser to redo the syte every iteration which took 40ms each time !
 	var myElement = document.getElementsByClassName('Mccol2')[collum];
 	var topPos = myElement.offsetTop;
 	document.getElementById('testdiv').scrollTop = topPos;
+}
 
 	document.getElementsByClassName("MicroCodeTable")[MicroCodeCounter].style.background = "yellow"
 
