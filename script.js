@@ -90,8 +90,8 @@ function initialize(){
 	document.getElementById("AddressBusInput").addEventListener("keydown",AddressBusInputKeydown);//damit die Entertaste funktioniert
 	document.getElementById("DataBusInput").addEventListener("keydown",DataBusInputKeydown);
 	document.getElementById("RamInput").addEventListener("keydown",RamInputKeydown);
-	document.addEventListener("keydown",keyDownHandler); //nur zum überspringen des ladebildschirms (wird nach dem Laden wieder entfernt)
-	document.addEventListener("mousedown",fistKeyDownHandler); //nur zum überspringen des ladebildschirms (wird nach dem Laden wieder entfernt)
+	document.addEventListener("keydown",fistKeyDownHandler); //nur zum überspringen des ladebildschirms (wird nach dem Laden wieder entfernt)
+	document.addEventListener("mousedown",mouseDownHandler); //nur zum überspringen des ladebildschirms (wird nach dem Laden wieder entfernt)
 	window.addEventListener('resize', resize);
 
 	document.getElementById(0).style.background = "#00F45D";
