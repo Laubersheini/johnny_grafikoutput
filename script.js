@@ -23,11 +23,11 @@ mit dank an Dr. Peter Dauscher
 
 	//daten die nicht zurückgesetzt werden müssen
 	var bonsai = false;
-/*
+
 	var screenShown = false;
 	var resolution = 50; //allways square
 	var pixelSize;
-*/
+
 	var timeoutforexecution  //zum abbrechen des ausführen des Programms
 	var alterProgrammzaeler= 0;
 	var geschwindigkeit = 1700; // intervall in dem Befehle ausgeführt werden
@@ -54,7 +54,7 @@ mit dank an Dr. Peter Dauscher
 	var startScreenFadeOutTime = 1500; // für den Ladebildschirm
 	var loaded = false;
 
-	const ramSize = 1000  //this ideally has to be a multiple of 10
+	const ramSize = 10000  //this ideally has to be a multiple of 10
 	const ramLength = Math.log10(ramSize) +1;
 
 	var Ram = JSON.parse(localStorage.getItem('johnny-ram'));
@@ -156,13 +156,13 @@ function resize(){
 	scrollMaxX = document.body.scrollWidth - window.innerWidth;
 	scrollMaxY = document.body.scrollHeight - window.innerHeight;
 
-/*
+
 	//ändern der Auflösung des Bildschirms:
 	let canvasWidth =document.getElementById("screen").clientWidth
 	document.getElementById("screen").width = canvasWidth;
 	document.getElementById("screen").height = canvasWidth;
 	pixelSize = canvasWidth/resolution;
-*/
+
 }
 
 function RamInputKeydown(e){

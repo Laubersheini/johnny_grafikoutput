@@ -109,6 +109,10 @@ mit dank an Dr. Peter Dauscher
 	<abbr title="show control unit"><input id="controlUnitCheckbox" type="checkbox" onchange="ToggleControlUnit()"></abbr>
 	</div>
 
+	<div id="screenToggle">
+	<img src="./images/show_control.svg" class="icon" id="screenIcon"></img> <!-- TODO: Needs better icon -->
+	<input type="checkbox" onchange="toggleScreen()">
+	</div>
 
 	<div id="recordMcPanel" class="control">
 	<abbr title="Record macrocode"><img tabindex=0 src="./images/record_macro.svg"  onclick="aufnahme()" class="icon" ></img></abbr>
@@ -229,6 +233,8 @@ mit dank an Dr. Peter Dauscher
 </table>
   </div>
 
+	<canvas id="screen">Your Browser does not support the screen feature</canvas>
+
 
 
 <div id="RamEingabe">
@@ -346,6 +352,7 @@ mit dank an Dr. Peter Dauscher
 <script type="text/javascript" src="./promt_pwa.js"></script>
 <script type="text/javascript" src="./viewport-units-buggyfill/viewport-units-buggyfill.js"></script>
 <script type="text/javascript" src="./script.js"></script>
+<script type="text/javascript" src="./screen.js"></script>
 <script type="text/javascript" src="./microcode.js"></script>
 <script type="text/javascript" src="./table.js"></script>
 <script type="text/javascript" src="./buttons.js"></script>

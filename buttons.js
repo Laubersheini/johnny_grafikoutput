@@ -179,6 +179,16 @@ function ToggleControlUnit(){
 	}
 }
 
+function toggleScreen(){
+	if(screenShown){
+	screenShown = false;
+	document.getElementById("screen").style.display = "none"
+	}else{
+	document.getElementById("screen").style.display = "block"
+	screenShown = true;
+	}
+}
+
 
 
 function resetComputer(){

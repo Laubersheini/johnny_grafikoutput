@@ -90,6 +90,15 @@ border: 1px solid black;
 
 
 }
+
+
+#screenToggle{
+	position:fixed;
+	left: 44vw;
+	top:2vh;
+
+
+}
 #recordMcPanel{
 	position:fixed;
 	left:70vw;
@@ -504,8 +513,14 @@ padding: 0px;
 	width:23vw;
 }
 
-
-
+#screen{
+  background-color: black;
+  position: fixed;
+  left: 37.05vw;
+  top: 19.35vh;
+  width:72.3vh;
+  height: 72.3vh;
+}
 
 /* The Modal (background) */
 .modal {
