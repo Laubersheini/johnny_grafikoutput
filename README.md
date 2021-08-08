@@ -1,9 +1,11 @@
-# johnny
+# johnny grafikoutput
 Simulation of a von neumann arcitecture
 
-The programm is hosted by inf-schule.de
-https://inf-schule.de/content/7_rechner/3_johnny/johnny2/
+This is an experimental version of the johnny simulator supporting graphics and keystrokes
 
-With the hosting at inf-schule.de it does take some time for them to apply new versions and bugfixes. As such there is also a Github page at:
-https://laubersheini.github.io/johnny
-which automatically updates as soon as i make a commit to the master branch of this repo so it should always be more up to date.
+The last 2500 adresses are a simple framebuffer for the display with higer values coresponding to brighter pixels. Addresses 7495-7499 are set to a one if the spacebar, or the arrow keys are pressed. This allows for very simple games to be written for Johnny.
+
+The programm is hosted at:
+
+https://laubersheini.github.io/johnny_grafikoutput
+
